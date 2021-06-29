@@ -1,22 +1,29 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-
 Vue.config.productionTip = false
+// import './require'
 
 var instance;
 function render(arg){
-  console.log('render', window.requireJS);
-  window.requireJS(['http://localhost:8080/arealocation_en.js'],function(a){
-  console.log('aaaaa',a)
-  })
+ 
   instance = new Vue({
     router,
     render: h => h(App)
   }).$mount('#childcon')
+  setTimeout(()=>{
+    console.log('render', window.require);
+  if(window.require){
+    window.require(['http://localhost:8080/arealocation_en.js'],function(a){
+      console.log('aaaaa',a)
+      })
+  }
+  },1000)
 }
 
+
 if(!window.__POWERED_BY_QIANKUN__){
+  console.log(router);
   render()
 }
 

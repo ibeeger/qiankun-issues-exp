@@ -4,7 +4,7 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
-    open: true,
+    open: false,
     progress:false,
     overlay: {
       warnings: false,
@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     output: {
-      // 把子应用打包成 umd 库格式
+      // // 把子应用打包成 umd 库格式
       library: `${name}`,
       libraryTarget: 'umd',
       jsonpFunction: `webpackJsonp_${name}`,
