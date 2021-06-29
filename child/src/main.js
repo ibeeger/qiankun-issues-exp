@@ -6,7 +6,10 @@ Vue.config.productionTip = false
 
 var instance;
 function render(arg){
-  console.log('render', arg);
+  console.log('render', window.requireJS);
+  window.requireJS(['http://localhost:8080/arealocation_en.js'],function(a){
+  console.log('aaaaa',a)
+  })
   instance = new Vue({
     router,
     render: h => h(App)

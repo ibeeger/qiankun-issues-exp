@@ -2142,7 +2142,9 @@ var requirejs, require, define;
 
     //Set up with config info.
     req(cfg);
-    this.requireJS = require;
-    this.requirejs = requirejs;
-    this.define = define;
+    // if(window.__POWERED_BY_QIANKUN__){
+        this.requireJS = require;
+        // this.requirejs = requirejs;
+        // this.define = define;
+    // }
 }(this, (typeof setTimeout === 'undefined' ? undefined : setTimeout)));
